@@ -9,10 +9,10 @@ public class EntryDeletionTests extends TestBase{
 
   @Test
   public void testEntryDeletion() {
-    //blogPage();
-    //selectEntry();
-   // deleteEntry();
-   // submitDeletion();
+    app.goTo().blogPage();
+    app.entry().selectEntry();
+    app.entry().deleteEntry();
+    app.entry().submitDeletion();
   }
 
 }
