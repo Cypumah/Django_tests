@@ -14,7 +14,7 @@ public class NavigationHelper extends HelperBase {
 
   public void adminPage() {
     if (isElementPresent(By.tagName("h1"))
-            && driver.findElement(By.tagName("h1")).getText().equals("Панель управления")) {
+            && driver.findElement(By.cssSelector("h1.dashboard-title")).getText().equals("Панель управления")) {
       return;
     }
     click(By.xpath("(//a[contains(@href, '/admin/')])[3]"));
