@@ -19,4 +19,5 @@ public class NavigationHelper extends HelperBase {
     }
     click(By.xpath("(//a[contains(@href, '/admin/')])[3]"));
   }
+
 }
