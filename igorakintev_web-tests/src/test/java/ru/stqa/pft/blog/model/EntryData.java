@@ -1,17 +1,32 @@
 package ru.stqa.pft.blog.model;
 
 public class EntryData {
-  private final String title;
-  private final String slug;
-  private final String markdown;
-  private final String text;
 
-  public EntryData(String title, String slug, String markdown, String text) {
+  private String title;
+  private String slug;
+  private String markdown;
+  private String text;
+
+  public EntryData withTitle(String title) {
     this.title = title;
-    this.slug = slug;
-    this.markdown = markdown;
-    this.text = text;
+    return this;
   }
+
+  public EntryData withSlug(String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  public EntryData withMarkdown(String markdown) {
+    this.markdown = markdown;
+    return this;
+  }
+
+  public EntryData withText(String text) {
+    this.text = text;
+    return this;
+  }
+
 
   public String getTitle() {
     return title;

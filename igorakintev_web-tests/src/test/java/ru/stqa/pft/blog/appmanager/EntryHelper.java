@@ -36,7 +36,8 @@ public class EntryHelper extends HelperBase{
     click(By.linkText("Удалить"));
   }
 
-  public void selectEntry() {
-    click(By.linkText("Entry Q3ngb"));
+  public void selectEntry(EntryData entry) {
+    //click(By.cssSelector("input[value='" + id + "']"));
+   click(By.linkText("Entry " + entry.getTitle()));
   }
 }

@@ -23,15 +23,20 @@ public class NavigationHelper extends HelperBase {
     click(By.xpath("(//a[contains(@href, '/admin/')])[3]"));
   }
 
+  public void blogPage() {
+    //проверка нахождения на нужной странице
+    if (isElementPresent(By.tagName("h1"))
+            && driver.findElement(By.cssSelector("#content > h1")).getText().equals("Добавить entry")) {
+      return;
+    }
+    driver.get("https://igorakintev.ru/admin/blog/");
+  }
+
   public void checkTitle(String locator, String selector) {
     try {
       selector = driver.findElement(By.cssSelector("#content > h1")).getText();
       Assert.assertEquals(selector, locator);
     } catch (NoSuchElementException ex) {
     } return;
-  }
-
-  public void blogPage() {
-    driver.get("https://igorakintev.ru/admin/blog/");
   }
 }
