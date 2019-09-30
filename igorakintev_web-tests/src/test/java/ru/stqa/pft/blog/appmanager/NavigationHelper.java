@@ -15,6 +15,7 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void adminPage() {
+    //проверка нахождения на нужной странице
     if (isElementPresent(By.tagName("h1"))
             && driver.findElement(By.cssSelector("h1.dashboard-title")).getText().equals("Панель управления")) {
       return;
@@ -22,10 +23,10 @@ public class NavigationHelper extends HelperBase {
     click(By.xpath("(//a[contains(@href, '/admin/')])[3]"));
   }
 
-  public void checkTitle(String locator) {
+  public void checkTitle(String locator, String selector) {
     try {
-      String x = driver.findElement(By.cssSelector("#content > h1")).getText();
-      Assert.assertEquals(x, locator);
+      selector = driver.findElement(By.cssSelector("#content > h1")).getText();
+      Assert.assertEquals(selector, locator);
     } catch (NoSuchElementException ex) {
     } return;
   }

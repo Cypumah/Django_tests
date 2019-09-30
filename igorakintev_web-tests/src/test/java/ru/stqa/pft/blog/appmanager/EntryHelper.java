@@ -37,6 +37,6 @@ public class EntryHelper extends HelperBase{
   }
 
   public void selectEntry() {
-    click(By.linkText("Entry Title234234234"));
+    click(By.linkText("Entry Q3ngb"));
   }
 }

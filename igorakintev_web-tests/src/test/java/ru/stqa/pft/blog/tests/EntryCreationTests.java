@@ -11,10 +11,13 @@ public class EntryCreationTests extends TestBase {
   public void testEntryCreation() throws Exception {
     app.goTo().adminPage();
     app.entry().initEntryCreation();
-    app.goTo().checkTitle("Добавить entry");
     app.entry().fillEntryForm(new EntryData(RandomInput.getAlphaNumericString(5), RandomInput.getAlphaNumericString(7), RandomInput.getAlphaNumericString(9), RandomInput.getAlphaNumericString(2)));
     app.entry().submitEntryCreation();
+
     app.goTo().blogPage();
+    app.entry().selectEntry();
+    app.entry().deleteEntry();
+    app.entry().submitDeletion();
   }
 
 }
